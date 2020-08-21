@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "Leann James"
+__author__ = "Leann James with help from Daniel Lomelino"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -45,7 +45,7 @@ def not_bad(s):
     s_bad = s.find('bad')
 
     if s_bad > s_not:
-        s = s.replace(s[s_not:(s_bad+4)], 'good')
+        s = s.replace(s[s_not:(s_bad+3)], 'good')
     return s
 
 
@@ -60,18 +60,20 @@ def not_bad(s):
 
 
 def front_back(a, b):
+    mid_a = len(a)//2
+    mid_b = len(b)//2
     if len(a) % 2 == 0:
-        a_front = a[:int(len(a)/2)]
-        a_back = a[int(len(a)/2):]
+        a_front = a[:mid_a]
+        a_back = a[mid_a:]
     else:
-        a_front = a[:int((len(a)+1)/2)]
-        a_back = a[int((len(a)-1)/2):]
+        a_front = a[:(mid_a+1)]
+        a_back = a[(mid_a+1):]
     if len(b) % 2 == 0:
-        b_front = b[:int(len(b)/2)]
-        b_back = b[int(len(b)/2):]
+        b_front = b[:mid_b]
+        b_back = b[mid_b:]
     else:
-        b_front = b[:int((len(b)+1)/2)]
-        b_back = b[int((len(b)-1)/2):]
+        b_front = b[:(mid_b+1)]
+        b_back = b[(mid_b+1):]
     return (a_front + b_front + a_back + b_back)
 
 
